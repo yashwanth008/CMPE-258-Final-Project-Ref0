@@ -1,0 +1,14 @@
+artifact_uri: /Users/yashwanth/Documents/Projects/ref-0-hackathon/runs/mlflow/648294115144686025/3842fd0209334305b4e20b4c59ee5d31/artifacts
+end_time: 1777673037739
+entry_point_name: ''
+experiment_id: '648294115144686025'
+lifecycle_stage: active
+run_id: 3842fd0209334305b4e20b4c59ee5d31
+run_name: yolo11n-foul-v1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777621037791
+status: 3
+tags: []
+user_id: yashwanth

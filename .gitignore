@@ -1,0 +1,13 @@
+# Environments
+venv/
+.env
+
+# MediaPipe Models
+*.task
+
+# Temporary Buffers
+temp_buffer/
+temp_clips/
+
+# OS files
+.DS_Store

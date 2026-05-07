@@ -1,0 +1,65 @@
+version: "3.9"
+
+# Ref Zero — Full stack docker-compose
+# Spins up FastAPI backend + Next.js frontend in one command.
+#
+# Usage:
+#   cp .env.example .env        ← fill in your API keys first
+#   docker-compose up --build
+#
+# Backend available at: http://localhost:8000
+# Frontend available at: http://localhost:3000
+# WebSocket stream at:  ws://localhost:8000/ws/stream
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: ref-zero-backend
+    ports:
+      - "8000:7860"       # map container's 7860 (HF Spaces default) → host 8000
+    env_file:
+      - .env
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - LIVEKIT_URL=${LIVEKIT_URL:-ws://localhost:7880}
+      - LIVEKIT_API_KEY=${LIVEKIT_API_KEY:-devkey}
+      - LIVEKIT_API_SECRET=${LIVEKIT_API_SECRET:-secret}
+      - WANDB_API_KEY=${WANDB_API_KEY}
+      - ROBOFLOW_API_KEY=${ROBOFLOW_API_KEY}
+    volumes:
+      # Mount runs/ so trained checkpoints persist across container restarts
+      - ./runs:/home/user/app/runs
+      # Mount data/ so dataset survives rebuilds
+      - ./data:/home/user/app/data
+      # Mount assets/ so metric charts are accessible to frontend
+      - ./assets:/home/user/app/assets
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7860/docs"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    container_name: ref-zero-frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+      - NEXT_PUBLIC_WS_URL=ws://localhost:8000
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+# Named volumes for persistence
+volumes:
+  runs:
+  data:
+  assets:

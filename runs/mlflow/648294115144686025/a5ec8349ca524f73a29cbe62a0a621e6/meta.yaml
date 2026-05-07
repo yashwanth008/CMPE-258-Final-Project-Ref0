@@ -1,0 +1,14 @@
+artifact_uri: /Users/yashwanth/Documents/Projects/ref-0-hackathon/runs/mlflow/648294115144686025/a5ec8349ca524f73a29cbe62a0a621e6/artifacts
+end_time: 1777838110190
+entry_point_name: ''
+experiment_id: '648294115144686025'
+lifecycle_stage: active
+run_id: a5ec8349ca524f73a29cbe62a0a621e6
+run_name: yolo11m-ablation
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1777837028580
+status: 3
+tags: []
+user_id: yashwanth

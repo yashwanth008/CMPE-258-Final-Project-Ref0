@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 3
+names: ['Foul', 'foul', 'no foul']
+
+roboflow:
+  workspace: v-for-foul-detection-in-basketball
+  project: foul-detection-vr7uh
+  version: 9
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/v-for-foul-detection-in-basketball/foul-detection-vr7uh/dataset/9

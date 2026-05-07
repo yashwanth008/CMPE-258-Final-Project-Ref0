@@ -1,0 +1,52 @@
+# Ref Zero — W&B Hyperparameter Sweep Configuration
+#
+# Sweeps over learning rate, batch size, and confidence threshold.
+# Run with:
+#   wandb sweep sweep_config.yaml          → prints SWEEP_ID
+#   wandb agent YOUR_ENTITY/ref-zero/SWEEP_ID
+#
+# Results appear in W&B dashboard as a parallel coordinates plot.
+# Screenshot that plot → save to assets/metrics/wandb_sweep.png
+
+program: backend/train.py
+method: grid          # grid = all combinations; use bayes for larger spaces
+
+metric:
+  name: val/mAP50     # maximize validation mAP@0.5
+  goal: maximize
+
+parameters:
+  # Learning rate — most impactful hyperparameter
+  # 0.001  = standard YOLO fine-tuning LR
+  # 0.0005 = more conservative — useful if dataset is very small
+  # 0.0001 = slow convergence, often underfit on 50 epochs
+  lr0:
+    values: [0.001, 0.0005, 0.0001]
+
+  # Batch size — tradeoff between gradient quality and memory
+  # 8  = fits any GPU/CPU, slower convergence
+  # 16 = standard, good gradient estimates
+  batch:
+    values: [8, 16]
+
+  # Confidence threshold — tuned on val set
+  # 0.3 = more recalls, more false positives
+  # 0.5 = balanced (our default)
+  conf:
+    values: [0.3, 0.5]
+
+# Total combinations: 3 × 2 × 2 = 12 runs
+# Each run ~15 min on GPU → full sweep ~3 hrs
+
+early_terminate:
+  type: hyperband
+  min_iter: 10        # kill bad runs after 10 epochs
+  eta: 2
+
+command:
+  - ${env}
+  - python
+  - ${program}
+  - --model-size
+  - nano
+  - ${args}

@@ -1,0 +1,10 @@
+path: /Users/yashwanth/Documents/Projects/ref-0-hackathon/data/foul-detection
+train: train/images
+val:   valid/images
+test:  test/images
+
+nc: 3
+names:
+  0: foul
+  1: no-foul
+  2: contact
