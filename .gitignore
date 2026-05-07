@@ -10,4 +10,10 @@ temp_buffer/
 temp_clips/
 
 # OS files
-.DS_Store
+.DS_Storemock_data/
+runs/
+yolo11m.pt
+yolo11s.pt
+yolo11n.pt
+*.mp4
+*.MP4
