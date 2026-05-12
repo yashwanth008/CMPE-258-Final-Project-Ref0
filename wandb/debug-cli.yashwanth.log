@@ -1,0 +1,342 @@
+2026-05-07 03:19:48 ERROR Error executing GraphQL.
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+2026-05-07 03:19:48 ERROR Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 160, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 150, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 1205, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/internal.py", line 128, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2929, in upsert_sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 349, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 163, in __call__
+    if not retry_loop.should_retry(e):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 280, in should_retry
+    retry_check_result = self._retry_check(exception)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/util.py", line 902, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: Sweep user not valid
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 160, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 150, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 1205, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/internal.py", line 128, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2929, in upsert_sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 349, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 163, in __call__
+    if not retry_loop.should_retry(e):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 280, in should_retry
+    retry_check_result = self._retry_check(exception)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/util.py", line 902, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: Sweep user not valid
+2026-05-07 03:22:06 ERROR Error executing GraphQL.
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+2026-05-07 03:22:06 ERROR Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 160, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 150, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 1205, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/internal.py", line 128, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2929, in upsert_sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 349, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 163, in __call__
+    if not retry_loop.should_retry(e):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 280, in should_retry
+    retry_check_result = self._retry_check(exception)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/util.py", line 902, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: entity not found
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 160, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 150, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 1205, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/internal.py", line 128, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2929, in upsert_sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 349, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 163, in __call__
+    if not retry_loop.should_retry(e):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 280, in should_retry
+    retry_check_result = self._retry_check(exception)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/util.py", line 902, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: entity not found
+2026-05-07 03:23:25 ERROR Error executing GraphQL.
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+2026-05-07 03:23:25 ERROR Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 160, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 150, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 1205, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/internal.py", line 128, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2929, in upsert_sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 349, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 163, in __call__
+    if not retry_loop.should_retry(e):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 280, in should_retry
+    retry_check_result = self._retry_check(exception)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/util.py", line 902, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: entity not found
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 160, in __call__
+    result = self._call_fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 379, in execute
+    return self.client.execute(*args, **kwargs)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/gql_request.py", line 71, in execute
+    request.raise_for_status()
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/requests/models.py", line 1026, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 404 Client Error: Not Found for url: https://api.wandb.ai/graphql
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 150, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/cli/cli.py", line 1205, in sweep
+    sweep_id, warnings = api.upsert_sweep(
+                         ^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/internal.py", line 128, in upsert_sweep
+    return self.api.upsert_sweep(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/apis/normalize.py", line 28, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 2929, in upsert_sweep
+    response = self.gql(
+               ^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/internal/internal_api.py", line 349, in gql
+    ret = self._retry_gql(
+          ^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 163, in __call__
+    if not retry_loop.should_retry(e):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/sdk/lib/retry.py", line 280, in should_retry
+    retry_check_result = self._retry_check(exception)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/lib/python3.11/site-packages/wandb/util.py", line 902, in no_retry_4xx
+    raise UsageError(body["errors"][0]["message"])
+wandb.errors.errors.UsageError: entity not found

@@ -1,0 +1,59 @@
+_wandb:
+    value:
+        cli_version: 0.26.1
+        e:
+            cj9vr4babap50ifpn7c8cqvosaxda9xb:
+                apple:
+                    ecpuCores: 4
+                    gpuCores: 16
+                    macModel: Mac14,9
+                    memoryGb: 16
+                    name: Apple M2 Pro
+                    pcpuCores: 6
+                    ramTotalBytes: "17179869184"
+                    swapTotalBytes: "21474836480"
+                cpu_count: 10
+                cpu_count_logical: 10
+                disk:
+                    /:
+                        total: "494384795648"
+                        used: "184026136576"
+                email: youngtiger.paladugu@gmail.com
+                executable: /Users/yashwanth/Documents/Projects/ref-0-hackathon/backend/venv/bin/python3
+                git:
+                    commit: d403c8f4ac1fde42612bd9cd0961a4ddd7da9a1b
+                    remote: https://github.com/yashwanth008/CMPE-258-Final-Project-Ref0.git
+                host: Yashwanths-MacBook-Pro.local
+                memory:
+                    total: "17179869184"
+                os: macOS-26.3.1-arm64-arm-64bit
+                program: <stdin>
+                python: CPython 3.11.14
+                root: /Users/yashwanth/Documents/Projects/ref-0-hackathon
+                startedAt: "2026-05-07T22:11:45.139349Z"
+                writerId: cj9vr4babap50ifpn7c8cqvosaxda9xb
+        m: []
+        python_version: 3.11.14
+        t:
+            "1":
+                - 1
+                - 41
+                - 105
+            "2":
+                - 1
+                - 41
+                - 105
+            "3":
+                - 2
+                - 13
+                - 16
+            "4": 3.11.14
+            "5": 0.26.1
+            "12": 0.26.1
+            "13": darwin-arm64
+epochs:
+    value: 5
+lr0:
+    value: 0.0005
+model:
+    value: yolo11n

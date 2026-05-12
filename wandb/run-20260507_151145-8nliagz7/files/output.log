@@ -1,0 +1,99 @@
+New https://pypi.org/project/ultralytics/8.4.47 available 😃 Update with 'pip install -U ultralytics'
+Ultralytics 8.4.9 🚀 Python-3.11.14 torch-2.10.0 MPS (Apple M2 Pro)
+[34m[1mengine/trainer: [0magnostic_nms=False, amp=True, angle=1.0, augment=False, auto_augment=randaugment, batch=16, bgr=0.0, box=7.5, cache=False, cfg=None, classes=None, close_mosaic=10, cls=0.5, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=data/data.yaml, degrees=0.0, deterministic=True, device=mps, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, end2end=None, epochs=5, erasing=0.4, exist_ok=True, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, half=False, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.0005, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=yolo11n.pt, momentum=0.937, mosaic=1.0, multi_scale=0.0, name=sweep-lr-0005, nbs=64, nms=False, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=100, perspective=0.0, plots=False, pose=12.0, pretrained=True, profile=False, project=runs/detect, rect=False, resume=False, retina_masks=False, rle=1.0, save=True, save_conf=False, save_crop=False, save_dir=/Users/yashwanth/Documents/Projects/ref-0-hackathon/runs/detect/runs/detect/sweep-lr-0005, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.1, val=True, verbose=False, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=8, workspace=None
+Overriding model.yaml nc=80 with nc=3
+
+                   from  n    params  module                                       arguments
+  0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]
+  1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]
+  2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]
+  3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+  4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]
+  5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+  6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]
+  7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]
+  8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]
+  9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]
+ 10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]
+ 11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 13                  -1  1    111296  ultralytics.nn.modules.block.C3k2            [384, 128, 1, False]
+ 14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']
+ 15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 16                  -1  1     32096  ultralytics.nn.modules.block.C3k2            [256, 64, 1, False]
+ 17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]
+ 18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 19                  -1  1     86720  ultralytics.nn.modules.block.C3k2            [192, 128, 1, False]
+ 20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]
+ 21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]
+ 22                  -1  1    378880  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True]
+ 23        [16, 19, 22]  1    431257  ultralytics.nn.modules.head.Detect           [3, 16, None, [64, 128, 256]]
+YOLO11n summary: 182 layers, 2,590,425 parameters, 2,590,409 gradients, 6.4 GFLOPs
+
+Transferred 448/499 items from pretrained weights
+Freezing layer 'model.23.dfl.conv.weight'
+[34m[1mtrain: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 341.8±66.7 MB/s, size: 95.1 KB)
+[K[34m[1mtrain: [0mScanning /Users/yashwanth/Documents/Projects/ref-0-hackathon/data/foul-detection/train/labels.cache... 1750 images, 7 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 1750/1750 163.1Mit/s 0.0s
+[34m[1mval: [0mFast image access ✅ (ping: 0.0±0.0 ms, read: 265.2±34.8 MB/s, size: 64.3 KB)
+[K[34m[1mval: [0mScanning /Users/yashwanth/Documents/Projects/ref-0-hackathon/data/foul-detection/valid/labels.cache... 70 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 70/70 32.6Mit/s 0.0s
+[34m[1moptimizer:[0m 'optimizer=auto' found, ignoring 'lr0=0.0005' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically...
+[34m[1moptimizer:[0m AdamW(lr=0.001429, momentum=0.9) with parameter groups 81 weight(decay=0.0), 88 weight(decay=0.0005), 87 bias(decay=0.0)
+[34m[1mMLflow: [0mlogging run_id(b4bc5c352da845aa82aa66eba1d2a486) to runs/mlflow
+[34m[1mMLflow: [0mview at http://127.0.0.1:5000 with 'mlflow server --backend-store-uri runs/mlflow'
+[34m[1mMLflow: [0mdisable with 'yolo settings mlflow=False'
+Image sizes 640 train, 640 val
+Using 0 dataloader workers
+Logging results to [1m/Users/yashwanth/Documents/Projects/ref-0-hackathon/runs/detect/runs/detect/sweep-lr-0005[0m
+Starting training for 5 epochs...
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+[K        1/5      4.28G       1.92      3.335      1.821         19        640: 100% ━━━━━━━━━━━━ 110/110 1.3s/it 2:221.3ss
+WARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 33% ━━━━──────── 1/3 16.0s/it 4.8s<31.9sWARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 4.0s/it 11.9s.1s
+                   all         70        127      0.196      0.171       0.13     0.0585
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+[K        2/5      4.25G      1.769      2.635      1.691         14        640: 100% ━━━━━━━━━━━━ 110/110 1.2s/it 2:171.3ss
+WARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 33% ━━━━──────── 1/3 16.6s/it 5.0s<33.2sWARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 67% ━━━━━━━━──── 2/3 9.0s/it 9.4s<9.0sWARNING ⚠️ NMS time limit 2.300s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 4.2s/it 12.7s
+                   all         70        127      0.233      0.124      0.115     0.0326
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+[K        3/5      4.25G      1.728      2.382      1.657         20        640: 100% ━━━━━━━━━━━━ 110/110 1.2s/it 2:091.3ss
+WARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 33% ━━━━──────── 1/3 16.2s/it 4.9s<32.4sWARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 67% ━━━━━━━━──── 2/3 10.4s/it 10.6s<10.4sWARNING ⚠️ NMS time limit 2.300s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 4.6s/it 13.9s
+                   all         70        127      0.335       0.22      0.203     0.0968
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+[K        4/5      4.25G      1.636      2.062      1.576         19        640: 100% ━━━━━━━━━━━━ 110/110 1.4s/it 2:331.5ss
+WARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 33% ━━━━──────── 1/3 15.7s/it 4.7s<31.4sWARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 4.8s/it 14.4s<10.3s
+                   all         70        127      0.395      0.245      0.215      0.106
+
+      Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+[K        5/5      4.25G      1.539      1.828        1.5         22        640: 100% ━━━━━━━━━━━━ 110/110 1.4s/it 2:341.4ss
+WARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 33% ━━━━──────── 1/3 16.9s/it 5.1s<33.9sWARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 4.4s/it 13.1s<10.0s
+                   all         70        127      0.526      0.192      0.227       0.11
+
+5 epochs completed in 0.220 hours.
+Optimizer stripped from /Users/yashwanth/Documents/Projects/ref-0-hackathon/runs/detect/runs/detect/sweep-lr-0005/weights/last.pt, 5.5MB
+Optimizer stripped from /Users/yashwanth/Documents/Projects/ref-0-hackathon/runs/detect/runs/detect/sweep-lr-0005/weights/best.pt, 5.5MB
+
+Validating /Users/yashwanth/Documents/Projects/ref-0-hackathon/runs/detect/runs/detect/sweep-lr-0005/weights/best.pt...
+Ultralytics 8.4.9 🚀 Python-3.11.14 torch-2.10.0 MPS (Apple M2 Pro)
+YOLO11n summary (fused): 101 layers, 2,582,737 parameters, 0 gradients, 6.3 GFLOPs
+WARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 33% ━━━━──────── 1/3 16.7s/it 5.0s<33.5sWARNING ⚠️ NMS time limit 3.600s exceeded
+[K                 Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 3/3 4.0s/it 12.1s9.8s
+                   all         70        127      0.537      0.251      0.287       0.14
+Speed: 0.1ms preprocess, 30.1ms inference, 0.0ms loss, 129.8ms postprocess per image
+[34m[1mMLflow: [0mresults logged to runs/mlflow
+[34m[1mMLflow: [0mdisable with 'yolo settings mlflow=False'

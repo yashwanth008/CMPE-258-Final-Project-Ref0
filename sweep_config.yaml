@@ -9,6 +9,7 @@
 # Screenshot that plot → save to assets/metrics/wandb_sweep.png
 
 program: backend/train.py
+entity: youngtiger-paladugu
 method: grid          # grid = all combinations; use bayes for larger spaces
 
 metric:
